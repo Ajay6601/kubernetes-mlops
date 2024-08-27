@@ -1,9 +1,9 @@
 multibranchPipelineJob('infra-jenkins-job') {
     branchSources {
         github {
-            id('csye7125-su24-t12-infra-jenkins')
+            id('kubernetes-mlops-infra-jenkins')
             scanCredentialsId('git-credentials-id')
-            repoOwner('cyse7125-su24-team12')
+            repoOwner('Ajay6601')
             repository('infra-jenkins')
             buildForkPRMerge(true)
             buildOriginBranch(false)

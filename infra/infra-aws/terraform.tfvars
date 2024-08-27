@@ -415,21 +415,21 @@ eks_autoscaler_policy = {
 }
 
 github_pat      = "<github_pat>"
-github_username = "shyam2520"
+github_username = "Ajay6601"
 
-github_chart_url = "https://github.com/cyse7125-su24-team12/helm-eks-autoscaler"
+github_chart_url = "https://github.com/Ajay6601/kubernetes-mlops"
 
 docker_hub_registry = "https://index.docker.io/v1/"
-docker_hub_username = "bala699"
+docker_hub_username = "ajay6601"
 docker_hub_password = "<docker_pat>"
-docker_hub_email    = "ubalasubramanian03@gmail.com"
+docker_hub_email    = "ajayreddy6601@gmail.com"
 
 autoscaler_config = {
   image = {
-    repository = "bala699/cluster-autoscaler"
+    repository = "ajay6601/cluster-autoscaler"
     tag        = "v1.30.0"
   }
-  asset_url = "https://api.github.com/repos/cyse7125-su24-team12/helm-eks-autoscaler/releases/assets/180864536"
+  asset_url = "https://api.github.com/repos/Ajay6601/kubernetes-mlops/releases/assets/180864536"
 }
 
 sa_cert_manager = "cert-manager-sa"

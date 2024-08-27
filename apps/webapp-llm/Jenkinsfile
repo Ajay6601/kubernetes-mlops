@@ -4,11 +4,11 @@ pipeline {
         nodejs 'Node 20'
     }
     environment {
-        DOCKERHUB_REPO = 'bala699/webapp-llm'
+        DOCKERHUB_REPO = 'ajay6601/webapp-llm'
         BUILD_NUMBER = 'latest'
         GH_TOKEN = credentials('github-pat')
         REPO_NAME = "webapp-llm"
-        REPO_OWNER = "cyse7125-su24-team12"
+        REPO_OWNER = "Ajay6601"
         DOCKER_BUILDER_NAME = 'webapp-llm-builder'
         DOCKER_FILE = 'Dockerfile'
     }
@@ -23,7 +23,7 @@ pipeline {
             checkout([$class: 'GitSCM',
             branches: [[name: '*/main']],
             extensions: [[$class: 'CleanCheckout']],
-            userRemoteConfigs: [[url: 'https://github.com/cyse7125-su24-team12/webapp-llm.git', credentialsId: 'git-credentials-id']]
+            userRemoteConfigs: [[url: 'https://github.com/Ajay6601/kubernetes-mlops.git', credentialsId: 'git-credentials-id']]
         ])
             }
         }

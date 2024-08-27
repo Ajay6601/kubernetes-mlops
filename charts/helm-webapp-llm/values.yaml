@@ -5,7 +5,7 @@
 replicaCount: 2
 
 image:
-  repository: bala699/webapp-llm
+  repository: ajay6601/webapp-llm
   pullPolicy: Always
   tag: "1.2.0"
 
@@ -141,7 +141,7 @@ env:
         name: apikey-secret
         key: HFACE_API_TOKEN
   - name: PINECONE_INDEX_NAME
-    value: "csye7125-project"
+    value: "kubernetes-mlops"
   - name: PINECONE_NAMESPACE
     value: "default"
   - name: OLLAMA_URL

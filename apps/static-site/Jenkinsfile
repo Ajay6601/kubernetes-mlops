@@ -4,11 +4,11 @@ pipeline {
         nodejs 'Node 20'
     }
     environment {
-        DOCKERHUB_REPO = 'bala699/csye7125'
+        DOCKERHUB_REPO = 'ajay6601/kubernetes-mlops'
         BUILD_NUMBER = 'latest'
         GH_TOKEN = credentials('github-pat')
         REPO_NAME = "static-site"
-        REPO_OWNER = "cyse7125-su24-team12" // D
+        REPO_OWNER = "Ajay6601" // D
         DOCKER_BUILDER_NAME = 'static-builder'
     }
     stages {
@@ -22,7 +22,7 @@ pipeline {
             checkout([$class: 'GitSCM',
             branches: [[name: '*/main']],
             extensions: [[$class: 'CleanCheckout']],
-            userRemoteConfigs: [[url: 'https://github.com/cyse7125-su24-team12/static-site.git', credentialsId: 'git-credentials-id']]
+            userRemoteConfigs: [[url: 'https://github.com/Ajay6601/kubernetes-mlops.git', credentialsId: 'git-credentials-id']]
         ])
             }
         }

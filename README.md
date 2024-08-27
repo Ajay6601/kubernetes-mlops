@@ -2,12 +2,9 @@
 
 # kubernetes-mlops
 
-CSYE 7125 SU24 Team 12 CVE platform, imported from
-[cyse7125-su24-team12](https://github.com/cyse7125-su24-team12) with original
-commit history (May–August 2024).
-
-The Flask efficiency demo at the repo root is the earlier serving sketch.
-The course system lives under `apps/`, `charts/`, and `infra/`.
+CVE ingest and query platform on EKS: a Job publishes NVD JSON to Kafka, a
+consumer hashes it into Postgres, an operator turns GitHub delta releases into
+more Jobs, and a RAG service answers questions with Ollama `llama3.1:8b`.
 
 ```
 CVE List V5 zip / GitHub _delta_ releases

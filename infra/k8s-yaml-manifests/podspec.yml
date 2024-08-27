@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: caddy-container
-      image: bala699/csye7125:latest
+      image: ajay6601/kubernetes-mlops:latest
       command: ["/bin/sh", "-c"]
       args: ["caddy run --config $CADDY_PATH"]
       env:
@@ -39,7 +39,7 @@ spec:
         successThreshold: 1
         failureThreshold: 3
   imagePullSecrets:
-    - name: team12-dockerhub-secret
+    - name: dockerhub-secret
 
 ---
 apiVersion: v1

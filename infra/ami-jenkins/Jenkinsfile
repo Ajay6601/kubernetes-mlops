@@ -13,7 +13,7 @@ pipeline {
                 checkout([$class: 'GitSCM', 
                     branches: [[name: '*/main']],
                     extensions: [[$class: 'CleanCheckout']],
-                    userRemoteConfigs: [[url: "https://github.com/cyse7125-su24-team12/ami-jenkins.git", credentialsId: 'git-credentials-id']]
+                    userRemoteConfigs: [[url: "https://github.com/Ajay6601/kubernetes-mlops.git", credentialsId: 'git-credentials-id']]
                 ])
             }
         }

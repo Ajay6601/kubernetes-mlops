@@ -8,7 +8,7 @@ pipelineJob('helm-autoscaler-eks-remote-job') {
             scm {
                 git {
                     remote {
-                        url('https://github.com/cyse7125-su24-team12/helm-eks-autoscaler.git')
+                        url('https://github.com/Ajay6601/kubernetes-mlops.git')
                         credentials('git-credentials-id')
                     }
                     branch('main')

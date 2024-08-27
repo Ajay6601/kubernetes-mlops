@@ -1,4 +1,4 @@
-data "aws_ami" "latest_csye7125_ami_id" {
+data "aws_ami" "latest_mlops_ami_id" {
   most_recent = var.ami_latest_image
   owners      = [var.ami_owner]
 
@@ -14,7 +14,7 @@ data "aws_ami" "latest_csye7125_ami_id" {
 }
 
 resource "aws_instance" "jenkins" {
-  ami           = data.aws_ami.latest_csye7125_ami_id.id
+  ami           = data.aws_ami.latest_mlops_ami_id.id
   instance_type = var.instance_type
   subnet_id     = aws_subnet.jenkins_subnet.id
   security_groups = [

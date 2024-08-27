@@ -6,9 +6,9 @@ pipeline {
     environment {
         GH_TOKEN = credentials('github-pat')
         REPO_NAME = "helm-eks-autoscaler"
-        REPO_OWNER = "cyse7125-su24-team12" // Define the repository owner
-        DOCKERHUB_REPO_AUTOSCALER = 'bala699/cluster-autoscaler'
-        DOCKERHUB_REPO_METRICS = 'bala699/metrics-server'
+        REPO_OWNER = "Ajay6601" // Define the repository owner
+        DOCKERHUB_REPO_AUTOSCALER = 'ajay6601/cluster-autoscaler'
+        DOCKERHUB_REPO_METRICS = 'ajay6601/metrics-server'
         BUILD_NUMBER = 'latest'
         DOCKER_BUILDER_NAME = 'db-autoscaler-builder'
         // CHANGE THESE CREDS
@@ -157,7 +157,7 @@ pipeline {
             checkout([$class: 'GitSCM',
             branches: [[name: '*/main']],
             extensions: [[$class: 'CleanCheckout']],
-            userRemoteConfigs: [[url: 'https://github.com/cyse7125-su24-team12/helm-eks-autoscaler.git', credentialsId: 'git-credentials-id']]
+            userRemoteConfigs: [[url: 'https://github.com/Ajay6601/kubernetes-mlops.git', credentialsId: 'git-credentials-id']]
                 ])
             }
         }

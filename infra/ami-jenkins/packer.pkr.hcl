@@ -48,7 +48,7 @@ variable "github_pat" {
 }
 
 source "amazon-ebs" "ami-jenkins" {
-  ami_name              = "csye7125-{{timestamp}}"
+  ami_name              = "kubernetes-mlops-{{timestamp}}"
   force_delete_snapshot = true
   // access_key            = var.access_key
   // secret_key            = var.secret_key

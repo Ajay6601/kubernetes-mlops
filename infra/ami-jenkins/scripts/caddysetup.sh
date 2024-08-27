@@ -14,7 +14,7 @@ sudo apt-get install -y caddy
 
 # Define the Caddyfile content (improved)
 CADDYFILE_CONTENT="
-jenkinsv2.cloudnativewebapp.me {
+jenkins.example.com {
         reverse_proxy :8080
 }
 "

@@ -6,7 +6,7 @@ pipeline {
     environment {
         GH_TOKEN = credentials('github-pat')
         REPO_NAME = "helm-webapp-llm"
-        REPO_OWNER = "cyse7125-su24-team12" // Define the repository owner
+        REPO_OWNER = "Ajay6601" // Define the repository owner
     }
     stages {
         stage('Install helm') {
@@ -149,7 +149,7 @@ pipeline {
             checkout([$class: 'GitSCM',
             branches: [[name: '*/main']],
             extensions: [[$class: 'CleanCheckout']],
-            userRemoteConfigs: [[url: 'https://github.com/cyse7125-su24-team12/helm-webapp-llm.git', credentialsId: 'git-credentials-id']]
+            userRemoteConfigs: [[url: 'https://github.com/Ajay6601/kubernetes-mlops.git', credentialsId: 'git-credentials-id']]
                 ])
             }
         }
