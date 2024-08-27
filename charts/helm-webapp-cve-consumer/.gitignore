@@ -1,0 +1,8 @@
+.releaserc 
+.DS_Store
+
+#ignore scripts folder
+scripts/
+
+#ignore dockerfile
+Dockerfile

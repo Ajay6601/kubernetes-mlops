@@ -1,0 +1,24 @@
+name: Terraform
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  terraform_check:
+    name: Validate terraform
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the terraform code from repo
+        uses: actions/checkout@main
+
+      - name: Verifies the format of terraform files
+        run: terraform fmt -check .
+
+      - name: Initializes terraform configuration
+        run: terraform init
+
+      - name: Checks terraform syntax
+        run: terraform validate

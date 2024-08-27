@@ -1,0 +1,17 @@
+---
+name: YAML Linting Check
+run-name: YAML Validator
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+    branches:
+      - main
+jobs:
+  validate-yaml:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate YAML file
+        run: yamllint .

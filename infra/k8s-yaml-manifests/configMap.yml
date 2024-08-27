@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: caddy-config
+data:
+  IMAGE_NAME: "lowspecgamer/caddyserver:latest"
+  CONTAINER_PORT: "3500"
+  CADDY_PATH: "/etc/caddy/Caddyfile"
