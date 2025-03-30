@@ -42,7 +42,7 @@ def index():
         except Exception as e:
             prediction = f"Error : {e}"
 
-    return render_template("index.html" , prediction=prediction , features = FEATURES)
+    return render_template('index.html' , prediction=prediction , features = FEATURES)
 
 if __name__=="__main__":
     app.run(debug=True , host="0.0.0.0" , port=5000)
