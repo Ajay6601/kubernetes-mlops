@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: kubernetes-app
-        image: dataguru97/gitops-project:latest
+        image:
         ports:
         - containerPort: 5000
