@@ -1,30 +1,32 @@
 pipeline {
     agent any
-    environment{
-        DOCKER_HUB_REPO="ajay6601/kubernetes-mlops"
-        DOCKER_HUB_CREDENTIALS_ID="kubernetes-mlops"
+    environment {
+        DOCKER_HUB_REPO = "ajay6601/kubernetes-mlops"
+        DOCKER_HUB_CREDENTIALS_ID = "kubernetes-mlops"
     }
     stages {
         stage('Checkout Github') {
             steps {
                 echo 'Checking out code from GitHub...'
-		checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'kubernetes-mlops', url: 'https://github.com/Ajay6601/kubernetes-mlops.git']])
-		    }
-        }        
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'kubernetes-mlops', url: 'https://github.com/Ajay6601/kubernetes-mlops.git']])
+            }
+        }
         stage('Build Docker Image') {
             steps {
                 echo 'Building Docker image...'
-                dockerImage=docker.build("${DOCKER_HUB_REPO}:latest")
-
+                script {
+                    // Build the Docker image and assign it to a variable
+                    dockerImage = docker.build("${DOCKER_HUB_REPO}:latest")
+                }
             }
         }
         stage('Push Image to DockerHub') {
             steps {
-                script{
-                echo 'Pushing Docker image to DockerHub...'
-                docker.withRegistry('https://registry.hub.docker.com',"${DOCKER_HUB_CREDENTIALS_ID}"){
-                dockerImage.Push('latest')
-                }
+                script {
+                    echo 'Pushing Docker image to DockerHub...'
+                    docker.withRegistry('https://registry.hub.docker.com', "${DOCKER_HUB_CREDENTIALS_ID}") {
+                        dockerImage.push('latest')
+                    }
                 }
             }
         }
@@ -40,4 +42,3 @@ pipeline {
         }
     }
 }
-
