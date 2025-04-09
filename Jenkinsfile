@@ -14,7 +14,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo 'Building Docker image...'
-                                dockerImage=docker.build("${DOCKER_HUB_REPO}:latest")
+                dockerImage=docker.build("${DOCKER_HUB_REPO}:latest")
 
             }
         }
@@ -23,7 +23,7 @@ pipeline {
                 script{
                 echo 'Pushing Docker image to DockerHub...'
                 docker.withRegistry('https://registry.hub.docker.com',"${DOCKER_HUB_CREDENTIALS_ID}"){
-                    dockerImage.Push('latest')
+                dockerImage.Push('latest')
                 }
                 }
             }
