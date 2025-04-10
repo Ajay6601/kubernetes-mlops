@@ -45,12 +45,13 @@ pipeline {
         stage('Apply Kubernetes & Sync App with ArgoCD') {
             steps {
                 echo 'Applying Kubernetes and syncing with ArgoCD...'
-                script{
+                script {
                     kubeconfig(credentialsId: 'kubeconfig', serverUrl: 'https://192.168.49.2:8443') {
-                    sh '''
-                    argocd login 35.239.210.209:32594 --username admin --password $(kubectl get secret -n argocd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
-                    argocd app sync kubernetes-mlops
-                    '''
+                        sh '''
+                        argocd login 35.239.210.209:32594 --username admin --password $(kubectl get secret -n argocd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
+                        argocd app sync kubernetes-mlops
+                        '''
+                    }
                 }
             }
         }
